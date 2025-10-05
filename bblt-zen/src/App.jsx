@@ -6,6 +6,7 @@ import { MenuPage } from './pages/MenuPage';
 import { CustomPage } from './pages/CustomPage';
 import { DessertsPage } from './pages/DessertsPage';
 import { CartPage } from './pages/CartPage';
+import './App.css';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
