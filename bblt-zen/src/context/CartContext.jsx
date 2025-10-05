@@ -81,4 +81,8 @@ export const CartProvider = ({ children }) => {
 
 };
 export { CartContext };
+<<<<<<< HEAD
 export default CartContext ;
+=======
+export default CartContext;
+>>>>>>> c72140dcc6b64884f3aee8b9b2c1f8e53b76b19a

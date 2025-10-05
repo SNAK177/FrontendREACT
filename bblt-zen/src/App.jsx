@@ -79,9 +79,12 @@ function App() {
             </Routes>
           </main>
         </div>
-        
       </Router>
+<<<<<<< HEAD
    </CartProvider>
+=======
+    </CartProvider>
+>>>>>>> c72140dcc6b64884f3aee8b9b2c1f8e53b76b19a
   );
 }
 
