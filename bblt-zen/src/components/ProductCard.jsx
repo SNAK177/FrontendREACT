@@ -1,7 +1,7 @@
 import React from 'react';
 import './productcard.css';
 
-export const ProductCard = ({ product, onAddToCart }) => {
+export const productcard = ({ product, onAddToCart }) => {
   return (
     <div className="product-card">
       <div className="product-image">
