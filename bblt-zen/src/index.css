@@ -69,11 +69,7 @@ button:focus-visible {
 
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
+:root{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -86,8 +82,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }

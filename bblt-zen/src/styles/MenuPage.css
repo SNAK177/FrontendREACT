@@ -1,0 +1,37 @@
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 1rem 4rem;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.menu-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #ec4899;
+}
+
+.table-badge {
+  background-color: #fce7f3;
+  color: #be185d;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.products-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

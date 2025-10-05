@@ -2,6 +2,7 @@ import React from 'react';
 import { useCart } from '../hooks/useCart';
 import { ProductCard } from '../components/productcard';
 import { products } from '../data/products';
+import '../styles/MenuPage.css';
 
 export const MenuPage = () => {
   const { addToCart, currentTable } = useCart();
@@ -18,15 +19,15 @@ export const MenuPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-16">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold text-pink-500">Menu Bubble Tea</h1>
-        <div className="bg-pink-100 text-pink-700 px-4 py-2 rounded-lg font-bold">
+    <div className="menu-container">
+      <div className="menu-header">
+        <h1 className="menu-title">Menu Bubble Tea</h1>
+        <div className="table-badge">
           Tavolo #{currentTable}
         </div>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="products-grid">
         {products.map(product => (
           <ProductCard 
             key={product.id} 

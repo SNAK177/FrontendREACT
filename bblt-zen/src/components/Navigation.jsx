@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Home, List, Wand2, Cookie, ShoppingCart, X, Menu } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
+import './Navigation.css';
 
 export const Navigation = ({ currentPage, setCurrentPage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,31 +16,27 @@ export const Navigation = ({ currentPage, setCurrentPage }) => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-teal-400 rounded-full"></div>
-            <h1 className="text-2xl font-bold text-gray-800">
-              Bubble<span className="text-pink-500">Bliss</span>
+    <header className="header">
+      <div className="container">
+        <div className="nav-wrapper">
+          <div className="brand">
+            <div className="logo"></div>
+            <h1 className="brand-name">
+              Bubble<span className="brand-highlight">Bliss</span>
             </h1>
           </div>
 
-          <nav className="hidden md:flex gap-6">
+          <nav className="desktop-nav">
             {navItems.map(item => (
               <button
                 key={item.id}
                 onClick={() => setCurrentPage(item.id)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
-                  currentPage === item.id 
-                    ? 'text-pink-500 bg-pink-50' 
-                    : 'text-gray-700 hover:text-pink-500'
-                }`}
+                className={`nav-item ${currentPage === item.id ? 'active' : ''}`}
               >
                 <item.icon size={20} />
                 <span>{item.label}</span>
                 {item.id === 'cart' && getTotalItems() > 0 && (
-                  <span className="bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="cart-badge">
                     {getTotalItems()}
                   </span>
                 )}
@@ -49,14 +46,14 @@ export const Navigation = ({ currentPage, setCurrentPage }) => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-gray-700"
+            className="mobile-menu-button"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden pb-4 flex flex-col gap-2">
+          <nav className="mobile-nav">
             {navItems.map(item => (
               <button
                 key={item.id}
@@ -64,16 +61,12 @@ export const Navigation = ({ currentPage, setCurrentPage }) => {
                   setCurrentPage(item.id);
                   setMobileMenuOpen(false);
                 }}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
-                  currentPage === item.id 
-                    ? 'text-pink-500 bg-pink-50' 
-                    : 'text-gray-700'
-                }`}
+                className={`nav-item ${currentPage === item.id ? 'active' : ''}`}
               >
                 <item.icon size={20} />
                 <span>{item.label}</span>
                 {item.id === 'cart' && getTotalItems() > 0 && (
-                  <span className="bg-pink-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center ml-auto">
+                  <span className="cart-badge">
                     {getTotalItems()}
                   </span>
                 )}
