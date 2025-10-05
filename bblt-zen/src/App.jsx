@@ -51,10 +51,10 @@ import { CustomPage } from "./pages/CustomPage";
 import { DessertsPage } from "./pages/DessertsPage";
 import { CartPage } from "./pages/CartPage";
 import "./App.css";
-import { CartContext } from "./hooks/CartContext";
 
 function App() {
   return (
+    <CartProvider>
       <Router>
         <div>
           {/* Navbar con i Link */}
@@ -79,9 +79,8 @@ function App() {
             </Routes>
           </main>
         </div>
-        
       </Router>
-   
+    </CartProvider>
   );
 }
 
