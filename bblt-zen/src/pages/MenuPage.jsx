@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../hooks/useCart';
-import { ProductCard } from '../components/productcard';
+import { ProductCard } from '../components/ProductCard';
 import { products } from '../data/products';
 import '../styles/MenuPage.css';
 
