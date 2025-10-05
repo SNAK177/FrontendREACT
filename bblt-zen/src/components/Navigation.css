@@ -1,117 +1,76 @@
 .header {
-  position: fixed;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   z-index: 50;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.nav-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: linear-gradient(to bottom right, #ec4899, #2dd4bf);
-  border-radius: 9999px;
+  padding: 0.75rem 1rem;
 }
 
 .brand-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .brand-highlight {
-  color: #ec4899;
+  color: #ec4899; /* rosa */
 }
 
 .desktop-nav {
   display: none;
-  gap: 1.5rem;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 6px;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
+  color: #333;
+  text-decoration: none;
+  position: relative;
 }
 
 .nav-item.active {
   color: #ec4899;
-  background-color: #fce7f3;
-}
-
-.nav-item:not(.active) {
-  color: #374151;
-}
-
-.nav-item:hover:not(.active) {
-  color: #ec4899;
+  font-weight: bold;
 }
 
 .cart-badge {
-  background-color: #ec4899;
+  background: #ec4899;
   color: white;
   font-size: 0.75rem;
-  border-radius: 9999px;
-  width: 1.25rem;
-  height: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 999px;
+  position: absolute;
+  top: -4px;
+  right: -4px;
 }
 
 .mobile-menu-button {
-  display: block;
-  color: #374151;
+  background: none;
+  border: none;
 }
 
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #eee;
 }
 
-.mobile-nav .nav-item {
-  width: 100%;
-}
-
-.mobile-nav .cart-badge {
-  margin-left: auto;
-}
-
+/* Desktop media query */
 @media (min-width: 768px) {
   .desktop-nav {
     display: flex;
+    gap: 1rem;
   }
-  
-  .mobile-menu-button {
-    display: none;
-  }
-  
+  .mobile-menu-button,
   .mobile-nav {
     display: none;
   }

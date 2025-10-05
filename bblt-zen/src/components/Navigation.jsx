@@ -1,80 +1,77 @@
 import React, { useState } from 'react';
 import { Home, List, Wand2, Cookie, ShoppingCart, X, Menu } from 'lucide-react';
 import { useCart } from '../hooks/useCart';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
-export const Navigation = ({ currentPage, setCurrentPage }) => {
+export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { getTotalItems } = useCart();
+  const location = useLocation(); // per evidenziare pagina attiva
 
   const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'menu', label: 'Menu', icon: List },
-    { id: 'custom', label: 'Crea', icon: Wand2 },
-    { id: 'desserts', label: 'Dolci', icon: Cookie },
-    { id: 'cart', label: 'Carrello', icon: ShoppingCart },
+    { path: '/', label: 'Home', icon: Home },
+    { path: '/menu', label: 'Menu', icon: List },
+    { path: '/custom', label: 'Crea', icon: Wand2 },
+    { path: '/desserts', label: 'Dolci', icon: Cookie },
+    { path: '/cart', label: 'Carrello', icon: ShoppingCart },
   ];
 
   return (
     <header className="header">
       <div className="container">
-        <div className="nav-wrapper">
-          <div className="brand">
-            <div className="logo"></div>
-            <h1 className="brand-name">
-              Bubble<span className="brand-highlight">Bliss</span>
-            </h1>
-          </div>
-
-          <nav className="desktop-nav">
-            {navItems.map(item => (
-              <button
-                key={item.id}
-                onClick={() => setCurrentPage(item.id)}
-                className={`nav-item ${currentPage === item.id ? 'active' : ''}`}
-              >
-                <item.icon size={20} />
-                <span>{item.label}</span>
-                {item.id === 'cart' && getTotalItems() > 0 && (
-                  <span className="cart-badge">
-                    {getTotalItems()}
-                  </span>
-                )}
-              </button>
-            ))}
-          </nav>
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="mobile-menu-button"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        {/* Brand */}
+        <div className="brand">
+          <h1 className="brand-name">
+            Bubble<span className="brand-highlight">Bliss</span>
+          </h1>
         </div>
 
-        {mobileMenuOpen && (
-          <nav className="mobile-nav">
-            {navItems.map(item => (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setCurrentPage(item.id);
-                  setMobileMenuOpen(false);
-                }}
-                className={`nav-item ${currentPage === item.id ? 'active' : ''}`}
-              >
-                <item.icon size={20} />
-                <span>{item.label}</span>
-                {item.id === 'cart' && getTotalItems() > 0 && (
-                  <span className="cart-badge">
-                    {getTotalItems()}
-                  </span>
-                )}
-              </button>
-            ))}
-          </nav>
-        )}
+        {/* Desktop Navbar */}
+        <nav className="desktop-nav">
+          {navItems.map(item => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+            >
+              <item.icon size={20} />
+              <span>{item.label}</span>
+              {item.path === '/cart' && getTotalItems() > 0 && (
+                <span className="cart-badge">{getTotalItems()}</span>
+              )}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="mobile-menu-button"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Navbar */}
+      {mobileMenuOpen && (
+        <nav className="mobile-nav">
+          {navItems.map(item => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+            >
+              <item.icon size={20} />
+              <span>{item.label}</span>
+              {item.path === '/cart' && getTotalItems() > 0 && (
+                <span className="cart-badge">{getTotalItems()}</span>
+              )}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
-};
+}

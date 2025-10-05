@@ -1,7 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const CartContext = createContext({  
+const CartContext = createContext({  
   cart: [],
   addToCart: () => {},
   removeFromCart: () => {},
@@ -18,7 +17,7 @@ export const CartProvider = ({ children }) => {
   const [currentTable, setCurrentTable] = useState("12");
 
   useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(savedCart);
   }, []);
 
@@ -79,4 +78,6 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
+
 };
+export default CartContext ;

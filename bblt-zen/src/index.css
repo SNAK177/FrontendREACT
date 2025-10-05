@@ -1,88 +1,49 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: aquamarine;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body{
-  background-color: rgb(255, 210, 127);
-}
-.container{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
-button{
+
+button {
   cursor: pointer;
   border: none;
   background: none;
+  font-family: inherit;
 }
-button:focus{
+
+button:focus {
   outline: none;
 }
-input:focus{
+
+input:focus {
   outline: none;
 }
-input{
-  border: none;
-  background: none;
+
+input {
+  font-family: inherit;
 }
-input::placeholder{
-  color: #ccc;
-}
-ul{
+
+ul {
   list-style: none;
 }
-img{      
+
+img {
   display: block;
   max-width: 100%;
-}   
-h1,h2,h3,h4,h5,h6{
+}
+
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
-}
-p{
-  margin: 0;
-  padding: 0;
-}
-.page-container {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.page-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #333;
-}   
-.page-icon {
-  width: 2rem;
-  height: 2rem;
-  color: #333;
-}
-.page-icon:hover {
-  color: #007bff;
-}
-@media (max-width: 768px) {
-  .page-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .page-icon {
-    margin-top: 1rem;
-  }
 }
