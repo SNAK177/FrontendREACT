@@ -23,7 +23,7 @@ export function Navigation() {
                 {/* Brand */}
                 <div className="brand">
                     <h1 className="brand-name">
-                        Bubble<span className="brand-highlight">Bliss</span>
+                        Bubble Tea <span className="brand-highlight"> Zen</span>
                     </h1>
                 </div>
 
