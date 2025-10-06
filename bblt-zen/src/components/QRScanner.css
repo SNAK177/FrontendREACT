@@ -1,155 +1,155 @@
 .qr-container {
-  max-width: 32rem;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  text-align: center;
+    max-width: 32rem;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
 }
 
 .qr-icon {
-  margin: 0 auto;
-  color: #ec4899;
-  margin-bottom: 1rem;
+    margin: 0 auto;
+    color: #ec4899;
+    margin-bottom: 1rem;
 }
 
 .qr-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .qr-description {
-  color: #4b5563;
-  margin-bottom: 1.5rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
 }
 
 .button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .scan-button {
-  width: 100%;
-  background-color: #ec4899;
-  color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: background-color 0.2s;
+    width: 100%;
+    background-color: #ec4899;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
 }
 
 .scan-button:hover {
-  background-color: #db2777;
+    background-color: #db2777;
 }
 
 .manual-button {
-  width: 100%;
-  background-color: #e5e7eb;
-  color: #374151;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s;
+    width: 100%;
+    background-color: #e5e7eb;
+    color: #374151;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
 }
 
 .manual-button:hover {
-  background-color: #d1d5db;
+    background-color: #d1d5db;
 }
 
 .scanner-view {
-  position: relative;
-  background-color: black;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  margin-bottom: 1rem;
+    position: relative;
+    background-color: black;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
 }
 
 .camera-feed {
-  width: 100%;
-  height: 16rem;
-  object-fit: cover;
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
 }
 
 .scan-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
 }
 
 .scan-frame {
-  width: 12rem;
-  height: 12rem;
-  border: 4px solid #ec4899;
-  border-radius: 0.5rem;
-  position: relative;
+    width: 12rem;
+    height: 12rem;
+    border: 4px solid #ec4899;
+    border-radius: 0.5rem;
+    position: relative;
 }
 
 .corner {
-  position: absolute;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-color: white;
-  border-style: solid;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-color: white;
+    border-style: solid;
 }
 
 .corner-tl {
-  top: 0;
-  left: 0;
-  border-width: 4px 0 0 4px;
+    top: 0;
+    left: 0;
+    border-width: 4px 0 0 4px;
 }
 
 .corner-tr {
-  top: 0;
-  right: 0;
-  border-width: 4px 4px 0 0;
+    top: 0;
+    right: 0;
+    border-width: 4px 4px 0 0;
 }
 
 .corner-bl {
-  bottom: 0;
-  left: 0;
-  border-width: 0 0 4px 4px;
+    bottom: 0;
+    left: 0;
+    border-width: 0 0 4px 4px;
 }
 
 .corner-br {
-  bottom: 0;
-  right: 0;
-  border-width: 0 4px 4px 0;
+    bottom: 0;
+    right: 0;
+    border-width: 0 4px 4px 0;
 }
 
 .success-message {
-  background-color: #dcfce7;
-  color: #166534;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
 }
 
 .scan-hint {
-  font-size: 0.875rem;
-  color: #4b5563;
+    font-size: 0.875rem;
+    color: #4b5563;
 }
 
 .cancel-button {
-  width: 100%;
-  background-color: #ef4444;
-  color: white;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: background-color 0.2s;
+    width: 100%;
+    background-color: #ef4444;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
 }
 
 .cancel-button:hover {
-  background-color: #dc2626;
+    background-color: #dc2626;
 }

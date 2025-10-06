@@ -1,86 +1,86 @@
 .desserts-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6rem 1rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 1rem 4rem;
 }
 
 .desserts-title {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #ec4899;
-  margin-bottom: 2rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #ec4899;
+    margin-bottom: 2rem;
 }
 
 .desserts-grid {
-  display: grid;
-  gap: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
 }
 
 .dessert-card {
-  background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: box-shadow 0.3s;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
 }
 
 .dessert-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .dessert-image {
-  height: 12rem;
-  background: linear-gradient(to bottom right, #fef3c7, #fed7aa);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 12rem;
+    background: linear-gradient(to bottom right, #fef3c7, #fed7aa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dessert-emoji {
-  font-size: 3.75rem;
+    font-size: 3.75rem;
 }
 
 .dessert-content {
-  padding: 1.5rem;
+    padding: 1.5rem;
 }
 
 .dessert-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 .dessert-description {
-  color: #4b5563;
-  margin-bottom: 1rem;
+    color: #4b5563;
+    margin-bottom: 1rem;
 }
 
 .dessert-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .dessert-price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ec4899;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ec4899;
 }
 
 .add-button {
-  background-color: #ec4899;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s;
+    background-color: #ec4899;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
 }
 
 .add-button:hover {
-  background-color: #db2777;
+    background-color: #db2777;
 }
 
 @media (min-width: 768px) {
-  .desserts-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .desserts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
