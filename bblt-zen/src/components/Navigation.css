@@ -1,9 +1,11 @@
 .header {
-    background: white;
-    border-bottom: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 50;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
 .container {
@@ -29,27 +31,52 @@
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 0.5rem 0.75rem;
-    color: #333;
+    gap: 8px;
+    padding: 0.625rem 1rem;
+    color: #4b5563;
     text-decoration: none;
     position: relative;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background: rgba(236, 72, 153, 0.08);
+    color: #ec4899;
 }
 
 .nav-item.active {
     color: #ec4899;
-    font-weight: bold;
+    font-weight: 600;
+    background: rgba(236, 72, 153, 0.1);
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ec4899, transparent);
+    border-radius: 2px;
 }
 
 .cart-badge {
-    background: #ec4899;
+    background: linear-gradient(135deg, #ec4899, #db2777);
     color: white;
-    font-size: 0.75rem;
-    padding: 2px 6px;
+    font-size: 0.7rem;
+    padding: 3px 7px;
     border-radius: 999px;
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: -6px;
+    right: -6px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+    min-width: 20px;
+    text-align: center;
 }
 
 .mobile-menu-button {

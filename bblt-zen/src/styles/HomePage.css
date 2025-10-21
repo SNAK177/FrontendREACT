@@ -21,15 +21,20 @@
 }
 
 .hero-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #1f2937;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .hero-description {
     font-size: 1.125rem;
-    color: #4b5563;
+    color: #6b7280;
+    line-height: 1.7;
 }
 
 .button-container {
@@ -39,33 +44,43 @@
 }
 
 .menu-button {
-    background-color: #ec4899;
+    background: linear-gradient(135deg, #ec4899, #db2777);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: background-color 0.3s;
+    gap: 0.625rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.35);
 }
 
 .menu-button:hover {
-    background-color: #db2777;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(236, 72, 153, 0.5);
+    background: linear-gradient(135deg, #db2777, #be185d);
 }
 
 .custom-button {
-    background-color: #2dd4bf;
+    background: linear-gradient(135deg, #2dd4bf, #14b8a6);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    transition: background-color 0.3s;
+    gap: 0.625rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(45, 212, 191, 0.35);
 }
 
 .custom-button:hover {
-    background-color: #14b8a6;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(45, 212, 191, 0.5);
+    background: linear-gradient(135deg, #14b8a6, #0d9488);
 }
 
 .bubble-tea-icon {
@@ -91,10 +106,17 @@
 
 .feature-card {
     background-color: white;
-    padding: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
 .feature-icon {
