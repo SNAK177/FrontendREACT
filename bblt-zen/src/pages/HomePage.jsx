@@ -2,8 +2,10 @@ import React from 'react';
 import {List, Wand2} from 'lucide-react';
 import QRScanner from '../components/QRScanner.jsx';
 import '../styles/HomePage.css';
+import { useNavigate } from "react-router-dom";
 
 export const HomePage = ({setCurrentPage}) => {
+    const navigate = useNavigate();
     return (
         <div className="page-container">
             <section className="hero-section">
@@ -17,14 +19,14 @@ export const HomePage = ({setCurrentPage}) => {
                         </p>
                         <div className="button-container">
                             <button
-                                onClick={() => setCurrentPage('menu')}
+                                onClick={() => navigate('/menu')}
                                 className="menu-button"
                             >
                                 <List size={20}/>
                                 Vedi il Menu
                             </button>
                             <button
-                                onClick={() => setCurrentPage('custom')}
+                                onClick={() => navigate('/custom')}
                                 className="custom-button"
                             >
                                 <Wand2 size={20}/>

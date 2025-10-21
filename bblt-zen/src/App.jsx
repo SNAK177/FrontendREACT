@@ -11,7 +11,10 @@ import {CartPage} from "./pages/CartPage";
 import "./App.css";
 
 function App() {
+    //const [currentPage, setCurrentPage] = useState('home');
     return (
+        /*{currentPage === "home" && <HomePage setCurrentPage={setCurrentPage}/>}
+        {currentPage === "menu" && <MenuPage setCurrentPage={setCurrentPage}/>}*/
         <CartProvider>
             <Router>
                 <div>
