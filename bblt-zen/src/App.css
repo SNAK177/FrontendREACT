@@ -12,7 +12,7 @@
 
 .app {
     min-height: 100vh;
-    background: linear-gradient(-45deg, #f8f9fa 0%, #e9ecef 25%, #dee2e6 50%, #f1f3f5 75%, #ffffff 100%);
+    background: linear-gradient(-45deg, #ea76b5 0%, #e9ecef 25%, #dee2e6 50%, #f1f3f5 75%, #ffffff 100%);
     background-size: 400% 400%;
     animation: gradientShift 20s ease infinite;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;

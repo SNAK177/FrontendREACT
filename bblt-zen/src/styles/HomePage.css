@@ -1,5 +1,7 @@
 .page-container {
     min-height: 100vh;
+    background: linear-gradient(to bottom, #ffe4ec 0%, rgba(255, 228, 236, 0) 100%);
+
 }
 
 .hero-section {
