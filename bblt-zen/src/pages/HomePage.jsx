@@ -1,6 +1,6 @@
 import React from 'react';
 import {List, Wand2} from 'lucide-react';
-import {QRScanner} from '../components/QRScanner.jsx';
+import QRScanner from '../components/QRScanner.jsx';
 import '../styles/HomePage.css';
 
 export const HomePage = ({setCurrentPage}) => {

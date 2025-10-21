@@ -3,8 +3,9 @@ import {Camera, XCircle, QrCode} from "lucide-react";
 import {detectQRCode} from "../utils/qrDetector";
 import {useCart} from "../hooks/useCart";
 import "./QRScanner.css";
+import qrFrame from "../assets/qrframe.png";
 
-export const QRScanner = ({onScanComplete, setCurrentPage}) => {
+const QRScanner = ({onScanComplete, setCurrentPage}) => {
     const [showQRScanner, setShowQRScanner] = useState(false);
     const [scanMessage, setScanMessage] = useState("");
     const videoRef = useRef(null);
@@ -24,7 +25,7 @@ export const QRScanner = ({onScanComplete, setCurrentPage}) => {
                 if (videoRef.current && canvasRef.current) {
                     const result = detectQRCode(videoRef.current, canvasRef.current);
                     if (result) {
-                        handleQRCodeDetected(result);
+                        //handleQRCodeDetected(result);
                     }
                 }
             }, 500);
@@ -33,7 +34,6 @@ export const QRScanner = ({onScanComplete, setCurrentPage}) => {
             setScanMessage("Errore nell'accesso alla fotocamera");
         }
     };
-
     const stopQRScanner = () => {
         if (videoRef.current?.srcObject) {
             videoRef.current.srcObject.getTracks().forEach((track) => track.stop());
@@ -72,7 +72,8 @@ export const QRScanner = ({onScanComplete, setCurrentPage}) => {
 
     return (
         <div className="qr-container">
-            <QrCode size={64} className="qr-icon"/>
+            {/*<QrCode size={64} className="qr-icon"/>*/}
+            <img src={qrFrame} alt="QR Code" className="qr-icon"/>
             <h3 className="qr-title">Ordina dal tuo tavolo</h3>
             <p className="qr-description">
                 Scansiona il QR code del tuo tavolo per accedere al menu digitale
@@ -125,3 +126,4 @@ export const QRScanner = ({onScanComplete, setCurrentPage}) => {
         </div>
     );
 };
+export default QRScanner;
