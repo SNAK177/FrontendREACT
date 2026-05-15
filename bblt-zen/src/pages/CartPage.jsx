@@ -1,10 +1,13 @@
+// bblt-zen/src/pages/CartPage.jsx - AGGIORNATO
 import React from 'react';
-import {ShoppingCart, X, Plus, Minus} from 'lucide-react';
-import {useCart} from '../hooks/useCart';
+import { useNavigate } from 'react-router-dom';
+import { ShoppingCart, X, Plus, Minus, CreditCard } from 'lucide-react';
+import { useCart } from '../hooks/useCart';
 import '../styles/CartPage.css';
 
 export const CartPage = () => {
-    const {cart, removeFromCart, updateQuantity, getTotalPrice, clearCart} = useCart();
+    const navigate = useNavigate();
+    const { cart, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
 
     if (cart.length === 0) {
         return (
@@ -15,6 +18,10 @@ export const CartPage = () => {
             </div>
         );
     }
+
+    const handleCheckout = () => {
+        navigate('/payment');
+    };
 
     return (
         <div className="cart-container">
@@ -62,8 +69,8 @@ export const CartPage = () => {
                                     </button>
                                 </div>
                                 <span className="item-price">
-                  €{(item.price * item.quantity).toFixed(2)}
-                </span>
+                                    €{(item.price * item.quantity).toFixed(2)}
+                                </span>
                             </div>
                         </div>
                     ))}
@@ -75,13 +82,11 @@ export const CartPage = () => {
                         <span className="total-price">€{getTotalPrice().toFixed(2)}</span>
                     </div>
                     <button
-                        onClick={() => {
-                            alert('Ordine confermato! Grazie per il tuo acquisto.');
-                            clearCart();
-                        }}
+                        onClick={handleCheckout}
                         className="confirm-button"
                     >
-                        Conferma Ordine
+                        <CreditCard size={20} />
+                        Procedi al Pagamento
                     </button>
                     <button
                         onClick={clearCart}
