@@ -1,17 +1,22 @@
 import React, {useState, useRef, useEffect} from "react";
-import {Camera, XCircle, QrCode} from "lucide-react";
+import {Camera, XCircle} from "lucide-react";
+import {useNavigate} from "react-router-dom";
 import {detectQRCode} from "../utils/qrDetector";
 import {useCart} from "../hooks/useCart";
 import "./QRScanner.css";
 import qrFrame from "../assets/qrframe.png";
 
-const QRScanner = ({onScanComplete, setCurrentPage}) => {
+const QRScanner = ({onScanComplete}) => {
     const [showQRScanner, setShowQRScanner] = useState(false);
     const [scanMessage, setScanMessage] = useState("");
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const scanIntervalRef = useRef(null);
-    const {setTableNumber} = useCart();
+    const navigate = useNavigate();
+    // Il context esporta "setCurrentTable", non "setTableNumber":
+    // prima questa destructure prendeva undefined e il manual-entry
+    // crashava non appena si tentava di chiamarla.
+    const {setCurrentTable} = useCart();
 
     const startQRScanner = async () => {
         try {
@@ -25,7 +30,7 @@ const QRScanner = ({onScanComplete, setCurrentPage}) => {
                 if (videoRef.current && canvasRef.current) {
                     const result = detectQRCode(videoRef.current, canvasRef.current);
                     if (result) {
-                        //handleQRCodeDetected(result);
+                        handleQRCodeDetected(result);
                     }
                 }
             }, 500);
@@ -34,6 +39,7 @@ const QRScanner = ({onScanComplete, setCurrentPage}) => {
             setScanMessage("Errore nell'accesso alla fotocamera");
         }
     };
+
     const stopQRScanner = () => {
         if (videoRef.current?.srcObject) {
             videoRef.current.srcObject.getTracks().forEach((track) => track.stop());
@@ -47,13 +53,13 @@ const QRScanner = ({onScanComplete, setCurrentPage}) => {
 
     const handleQRCodeDetected = (tableNumber) => {
         stopQRScanner();
-        setTableNumber(tableNumber);
+        setCurrentTable(tableNumber);
         setScanMessage(`Tavolo ${tableNumber} rilevato!`);
         if (onScanComplete) {
             onScanComplete(tableNumber);
         }
         setTimeout(() => {
-            setCurrentPage("menu");
+            navigate("/menu");
         }, 1500);
     };
 
@@ -72,7 +78,6 @@ const QRScanner = ({onScanComplete, setCurrentPage}) => {
 
     return (
         <div className="qr-container">
-            {/*<QrCode size={64} className="qr-icon"/>*/}
             <img src={qrFrame} alt="QR Code" className="qr-icon"/>
             <h3 className="qr-title">Ordina dal tuo tavolo</h3>
             <p className="qr-description">

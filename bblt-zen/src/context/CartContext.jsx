@@ -35,8 +35,14 @@ export const CartProvider = ({children}) => {
         );
         let newCart;
         if (existingItemIndex >= 0) {
-            newCart = [...cart];
-            newCart[existingItemIndex].quantity += item.quantity;
+            // Prima si faceva newCart[existingItemIndex].quantity += ...
+            // su un oggetto che era ancora lo stesso riferimento di cart[i]:
+            // mutava lo stato esistente invece di crearne uno nuovo.
+            newCart = cart.map((cartItem, i) =>
+                i === existingItemIndex
+                    ? {...cartItem, quantity: cartItem.quantity + item.quantity}
+                    : cartItem
+            );
         } else {
             newCart = [...cart, item];
         }
@@ -54,8 +60,9 @@ export const CartProvider = ({children}) => {
             return;
         }
 
-        const newCart = [...cart];
-        newCart[index].quantity = quantity;
+        const newCart = cart.map((item, i) =>
+            i === index ? {...item, quantity} : item
+        );
         setCart(newCart);
         localStorage.setItem("cart", JSON.stringify(newCart));
     };
@@ -86,5 +93,3 @@ export const CartProvider = ({children}) => {
     );
 
 };
-
-

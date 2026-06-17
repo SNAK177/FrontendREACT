@@ -17,14 +17,9 @@ function App() {
         <CartProvider>
             <Router>
                 <div>
-                    {/* Navbar con i Link */}
-                    <Navigation>
-                        <Link to="/">Home</Link>
-                        <Link to="/menu">Menu</Link>
-                        <Link to="/custom">Crea</Link>
-                        <Link to="/desserts">Dolci</Link>
-                        <Link to="/cart">Carrello</Link>
-                    </Navigation>
+                    {/* Navigation gestisce già internamente i suoi nav item,
+                        non riceve/usa children: niente da passargli qui */}
+                    <Navigation />
                     <main>
                         <Routes>
                             <Route path="/" element={<HomePage />} />

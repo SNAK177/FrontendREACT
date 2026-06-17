@@ -4,7 +4,7 @@ import QRScanner from '../components/QRScanner.jsx';
 import '../styles/HomePage.css';
 import { useNavigate } from "react-router-dom";
 
-export const HomePage = ({setCurrentPage}) => {
+export const HomePage = () => {
     const navigate = useNavigate();
     return (
         <div className="page-container">
@@ -41,7 +41,7 @@ export const HomePage = ({setCurrentPage}) => {
             </section>
 
             <section className="features-section">
-                <QRScanner setCurrentPage={setCurrentPage}/>
+                <QRScanner/>
             </section>
 
             <section className="features-section">

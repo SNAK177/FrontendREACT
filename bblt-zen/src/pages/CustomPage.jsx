@@ -6,8 +6,6 @@ import '../styles/CustomPage.css';
 export const CustomPage = () => {
     const {addToCart} = useCart();
     const [selections, setSelections] = useState({
-        id: String | Number,
-        name: String,
         base: "Tè nero con latte",
         bubble: "Tapioca classica",
         aroma: "Vaniglia",
@@ -15,7 +13,6 @@ export const CustomPage = () => {
         ice: false,
         size: "L",
         quantity: 1,
-        price: Number
     });
 
     const {bases, bubbles, aromas} = customOptions;
